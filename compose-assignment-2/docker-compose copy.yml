@@ -1,11 +1,13 @@
 # create your drupal and postgres config here, based off the last assignment
-# assignment - create stack with secrets - based on previous file
 
-version: '3.1'
+version: '3'
 
 services: 
     web:
-        image: drupal:8.2
+        build: 
+            context: .
+            dockerfile: drupal.Dockerfile
+        image: custom-drupal
         ports:
           - 8080:80
         volumes:
@@ -17,11 +19,8 @@ services:
       
     database:
         image: postgres:12.1
-        secrets:
-            psql_user:
-              ext: psql_pw
         environment:
-         - POSTGRES_PASSWORD_FILE=/run/secrets/psql_pw
+          POSTGRES_PASSWORD: 1111
 
 volumes:
   drupal-modules:
