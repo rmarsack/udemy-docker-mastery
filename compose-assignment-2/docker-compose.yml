@@ -18,10 +18,14 @@ services:
     database:
         image: postgres:12.1
         secrets:
-            psql_user:
-              ext: psql_pw
+         - psql_pw
         environment:
          - POSTGRES_PASSWORD_FILE=/run/secrets/psql_pw
+
+
+secrets:
+  psql_pw:
+    external: true
 
 volumes:
   drupal-modules:
