@@ -1,0 +1,32 @@
+Created an ssh key, no passphrase for now
+
+Created two droplets at DO, just the 'basic' cheap ones
+
+Configured cluster.yml to point to those two IP addresses
+
+INFO[0168] 157.245.173.202:  time="2020-07-16T00:14:34Z" level=fatal msg="unable to validate system resource requirements: unable to verify memory requirements: Your system does not have enough memory. UCP suggests a minimum of 4.00 GB, but you only have 1.01 GB. You may have unexpected errors. You may proceed by specifying the '--force-minimums' flag, but you may experience scale and performance problems as a result"
+
+turned off DO droplets
+updated DO droplets to 4gb
+turned on DO droplets
+
+run the launchpad apply again
+
+lots of happy green messages this time!
+
+INFO[0176] ==> Running phase: Upgrade UCP components
+INFO[0177] 157.245.173.202: cluster already at version 3.3.1, not running upgrade
+INFO[0177] ==> Running phase: Join managers to swarm
+INFO[0178] 157.245.173.202: already a swarm node
+INFO[0178] ==> Running phase: Join workers
+INFO[0180] 157.245.173.157:  This node joined a swarm as a worker.
+INFO[0180] 157.245.173.157: joined succesfully
+INFO[0180] ==> Running phase: Label nodes
+INFO[0181] 157.245.173.202: labeling node
+INFO[0182] 157.245.173.157: labeling node
+INFO[0182] ==> Running phase: Close Connection
+INFO[0182] 157.245.173.157: connection closed
+INFO[0182] 157.245.173.202: connection closed
+INFO[0182] ==> Running phase: UCP cluster info
+INFO[0182] Cluster is now configured. You can access your cluster admin UI at: https://157.245.173.202
+INFO[0182] You can also download the admin client bundle with the following command: launchpad download-bundle --username

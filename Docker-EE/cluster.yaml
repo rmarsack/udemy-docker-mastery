@@ -1,0 +1,19 @@
+apiVersion: launchpad.mirantis.com/v1beta2
+kind: UCP
+metadata:
+  name: ucp-kube
+spec:
+  ucp:
+    installFlags:
+    - --admin-username=admin
+    - --admin-password=xxxxxxxx
+    - --default-node-orchestrator=kubernetes
+  hosts:
+  - address: 157.245.173.202
+    role: manager
+    ssh:
+      keyFile: ~/.ssh/id_rsa
+  - address: 157.245.173.157
+    role: worker
+    ssh:
+      keyFile: ~/.ssh/id_rsa
